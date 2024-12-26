@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SlidingText extends StatelessWidget {
@@ -11,6 +10,8 @@ class SlidingText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // AnimatedBuilder => handle part of update UI
+
     return AnimatedBuilder(
       animation: slidingAnimation,
       builder: (ctx, _) {

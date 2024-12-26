@@ -1,6 +1,10 @@
+import 'package:bookly/constant.dart';
 import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:bookly/features/splash/presentation/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 
 class SplashBodyView extends StatefulWidget {
   const SplashBodyView({super.key});
@@ -20,25 +24,15 @@ class _SplashBodyViewState extends State<SplashBodyView>
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(
-        seconds: 2,
-      ),
-    );
-    slidingAnimation = Tween<Offset>(begin: Offset(0, 1.5), end: Offset.zero)
-        .animate(animationController);
-    // forward => run animation
-    animationController.forward();
-    
-      }
+    initSlidingAnimation();
 
+    navigateToHome();
+  }
 
-       @override
+  @override
 
 //  dispose => avoid leak memory
   void dispose() {
-    
     super.dispose();
     animationController.dispose();
   }
@@ -54,10 +48,31 @@ class _SplashBodyViewState extends State<SplashBodyView>
         const SizedBox(
           height: 5,
         ),
-
-        // AnimatedBuilder => handle part of update UI
         SlidingText(slidingAnimation: slidingAnimation)
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(
+        seconds: 2,
+      ),
+    );
+    slidingAnimation = Tween<Offset>(begin: Offset(0, 1.5), end: Offset.zero)
+        .animate(animationController);
+    // forward => run animation
+    animationController.forward();
+  }
+
+  void navigateToHome() {
+    // Future.delayed => navigate to HomeView after 2 seconds
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => HomeView(),
+          // transition => handle (simple animation to navigate) transition between pages
+          transition: Transition.fade,
+          duration: kTranstionDuration);
+    });
   }
 }
