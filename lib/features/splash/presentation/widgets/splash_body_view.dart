@@ -76,3 +76,4 @@ class _SplashBodyViewState extends State<SplashBodyView>
     });
   }
 }
+ 
