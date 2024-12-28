@@ -12,15 +12,12 @@ class CustomAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(
         top: 40,
-        
-         
         bottom: 20,
       ),
       child: Row(
         children: [
           Image.asset(
-           logoImage,
-             
+            logoImage,
             height: 18,
           ),
           Spacer(),
