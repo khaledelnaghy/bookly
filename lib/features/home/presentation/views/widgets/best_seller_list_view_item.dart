@@ -35,7 +35,8 @@ class BestSellerListViewItem extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * .5,
                   child: Text(
                     "Harry Potter and the Goblet of Fire",
-                    style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                    style:
+                        Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -53,12 +54,13 @@ class BestSellerListViewItem extends StatelessWidget {
                 Row(children: [
                   Text(
                     "19.99 €",
-                    style:
-                        Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
+                    style: Styles.textStyle20
+                        .copyWith(fontWeight: FontWeight.bold),
                   ),
-                 const Spacer(),
+                  const Spacer(),
                   BookRating(),
                 ]),
+               
               ],
             ),
           ),
