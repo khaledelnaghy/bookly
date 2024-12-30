@@ -31,7 +31,7 @@ class FeaturedBoxListView extends StatelessWidget {
             ),  
           );
         } else if (state is FeaturedBooksFauire) {
-          return CustomWError(errorMessafe: state.errMessage);
+          return CustomWError(errorMessage: state.errMessage);
         } else {
           return const CustomLoadingIndicator();
         }
