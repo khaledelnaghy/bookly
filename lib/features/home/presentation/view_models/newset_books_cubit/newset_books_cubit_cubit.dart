@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'newset_books_cubit_state.dart';
 
-class NewsetBooksCubitCubit extends Cubit<NewsetBooksCubitState> {
-  NewsetBooksCubitCubit(this.homeRepo) : super(NewsetBooksCubitInitial());
+class NewsetBooksCubit extends Cubit<NewsetBooksCubitState> {
+  NewsetBooksCubit (this.homeRepo) : super(NewsetBooksCubitInitial());
 
   final HomeRepo homeRepo;
 
