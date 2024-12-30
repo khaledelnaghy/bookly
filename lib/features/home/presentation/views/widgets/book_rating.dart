@@ -32,7 +32,6 @@ class BookRating extends StatelessWidget {
           child: Text(
             "(2390)",
             style: Styles.textStyle14.copyWith(
-
               fontWeight: FontWeight.w600,
             ),
           ),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -11,7 +10,7 @@ class CustomSearchTextField extends StatelessWidget {
       decoration: InputDecoration(
         enabledBorder: buildOutLineInputBorder(),
         focusedBorder: buildOutLineInputBorder(),
-       hintText: "search",
+        hintText: "search",
         suffixIcon: IconButton(
           onPressed: () {},
           icon: Opacity(
@@ -28,10 +27,10 @@ class CustomSearchTextField extends StatelessWidget {
 
   OutlineInputBorder buildOutLineInputBorder() {
     return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(
-          color: Colors.white,
-        ),
-      );
+      borderRadius: BorderRadius.circular(12),
+      borderSide: BorderSide(
+        color: Colors.white,
+      ),
+    );
   }
 }

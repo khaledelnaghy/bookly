@@ -1,10 +1,9 @@
- 
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
- import 'package:bookly/features/splash/presentation/widgets/sliding_text.dart';
+import 'package:bookly/features/splash/presentation/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-  
+
 class SplashBodyView extends StatefulWidget {
   const SplashBodyView({super.key});
 
@@ -76,4 +75,3 @@ class _SplashBodyViewState extends State<SplashBodyView>
     });
   }
 }
- 
