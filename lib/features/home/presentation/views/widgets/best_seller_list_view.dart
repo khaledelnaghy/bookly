@@ -1,6 +1,6 @@
 import 'package:bookly/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly/core/widgets/custom_widget_error.dart';
-import 'package:bookly/features/home/presentation/view_models/cubit/newset_books_cubit_cubit.dart';
+import 'package:bookly/features/home/presentation/view_models/newset_books_cubit/newset_books_cubit_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
