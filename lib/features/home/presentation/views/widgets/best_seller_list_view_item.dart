@@ -19,7 +19,7 @@ class BookListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.kBookDeatilsView , extra: bookModel);
       },
       child: SizedBox(
-        height: 125,
+        height: 133,
         child: Row(
           children: [
             CustomBookImage(

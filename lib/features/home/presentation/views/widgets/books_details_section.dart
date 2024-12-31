@@ -1,12 +1,13 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_action.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book%20_image.dart';
 import 'package:flutter/material.dart';
 
 class BooksDetailsSection extends StatelessWidget {
-  const BooksDetailsSection({super.key});
-
+  const BooksDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -16,15 +17,16 @@ class BooksDetailsSection extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .16),
           child: CustomBookImage(
-            imageUrl: "https://static.wixstatic.com/media/cd9874_d395ebb9160b4ef8bb623b9f15701d48~mv2_d_3588_3588_s_4_2.jpg/v1/fill/w_640,h_640,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/cd9874_d395ebb9160b4ef8bb623b9f15701d48~mv2_d_3588_3588_s_4_2.jpg",
+            imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? "",
           ),
         ),
         SizedBox(
           height: 10,
         ),
         Text(
-          "The Jungle Book",
+          bookModel.volumeInfo.title!,
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 3,
@@ -32,7 +34,7 @@ class BooksDetailsSection extends StatelessWidget {
         Opacity(
           opacity: .7,
           child: Text(
-            "Rudyard Kipling",
+            bookModel.volumeInfo.authors?[0] ?? "",
             style: Styles.textStyle18.copyWith(
                 // color: Color(0xff707070),
                 fontStyle: FontStyle.italic,
@@ -44,13 +46,15 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
-          rating: 5,
-          count: 150,
+          rating: bookModel.volumeInfo.averageRating ?? 0,
+          count: bookModel.volumeInfo.ratingsCount ?? 0,
         ),
         SizedBox(
           height: 15,
         ),
-        BookActions(),
+        BookActions(
+          bookModel: bookModel,
+        ),
       ],
     );
   }
